@@ -1,0 +1,33 @@
+{
+	"name": "directus-extension-dynamic-api-drowpdown",
+	"description": "Dropdown interface with choiches instantly fetched from an API to which it is passible to pass as body the value stored in a target field in the currently edited item",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-interface"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "interface",
+		"path": "dist/index.js",
+		"source": "src/index.js",
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "13.0.1",
+		"vue": "^3.5.13"
+	},
+	"dependencies": {
+		"vuetify": "^3.7.0-beta.1"
+	}
+}

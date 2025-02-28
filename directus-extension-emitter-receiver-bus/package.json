@@ -1,0 +1,50 @@
+{
+	"name": "directus-extension-emitter-receiver-bus",
+	"description": "Enables persistent data sharing between interface instances via the EventBus, even across separately mounted components. Works within repeaters, nested structures, and parallel branches in the interface tree, not limited to parent-child relationships.",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-bundle"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "interface",
+				"name": "directus-extension-emitter",
+				"source": "src/directus-extension-emitter/index.ts"
+			},
+			{
+				"type": "interface",
+				"name": "directus-extension-receiver",
+				"source": "src/directus-extension-receiver/index.ts"
+			}
+		],
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"add": "directus-extension add"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "13.0.1",
+		"typescript": "^5.7.3",
+		"vue": "^3.5.13"
+	},
+	"dependencies": {
+		"shared-directus-eventbus-memory": "file:./shared-directus-eventBus-memory/shared-directus-eventbus-memory-1.0.2.tgz",
+		"shared-eventbus": "file:shared-eventbus-1.0.0.tgz"
+	}
+}

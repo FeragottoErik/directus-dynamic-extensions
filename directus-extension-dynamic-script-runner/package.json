@@ -1,0 +1,91 @@
+{
+	"name": "directus-extension-dynamic-script-runner",
+	"author": "feragotto_erik",
+	"description": "The directus-extension-dynamic-script-runner is a bundled Directus extension that includes a user interface and a sandboxed backend endpoint. Administrators can configure JavaScript code tied to collection schemas, executed during the interface lifecycle in the user’s browser.  The extension is capable of dynamically processes real-time changes to form data during creation or updates by substituting placeholders in the script with current or default field values. The result can be displayed only or both displayed and saved to the database as a field value. Secure execution is ensured through Directus sandboxing, delivering a robust and interactive environment for dynamic computations.",
+	"icon": "code_blocks",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-bundle"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "endpoint",
+				"name": "directus-extension-endpoint-run-script",
+				"source": "src/directus-extension-endpoint-run-script/index.ts",
+				"sandbox": {
+					"enabled": true,
+					"requestedScopes": {
+						"sleep": {},
+						"log": {},
+						"request": {
+							"methods": [
+								"GET",
+								"POST",
+								"PUT",
+								"DELETE",
+								"PATCH"
+							],
+							"urls": [
+								"https://*"
+							]
+						}
+					}
+				}
+			},
+			{
+				"type": "interface",
+				"name": "directus-extension-interface-current-item-watcher",
+				"source": "src/directus-extension-interface-current-item-watcher/index.ts"
+			}
+		],
+		"host": "^10.10.0",
+		"sandbox": {
+			"enabled": true,
+			"requestedScopes": {
+				"sleep": {},
+				"log": {},
+				"request": {
+					"methods": [
+						"GET",
+						"POST",
+						"PUT",
+						"DELETE",
+						"PATCH"
+					],
+					"urls": [
+						"https://*"
+					]
+				}
+			}
+		}
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"add": "directus-extension add"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "12.1.4",
+		"@types/node": "^22.10.6",
+		"typescript": "^5.7.3",
+		"vue": "^3.5.13"
+	},
+	"dependencies": {
+		"esprima": "^4.0.1",
+		"mitt": "^3.0.1",
+		"prettier": "^3.4.2"
+	}
+}
