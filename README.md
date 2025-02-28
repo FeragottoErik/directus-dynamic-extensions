@@ -1,6 +1,6 @@
 # Custom Directus Interface Extensions
 
-This repository contains three custom Directus interface extensions that enable dynamic script execution, inter-component communication, and API-powered dropdowns.
+This repository contains three custom Directus interface extensions that enable dynamic script execution, inter-component communication, and API-powered dropdowns. Building on top of work carried out in https://github.com/rezo-labs/directus-extension-computed-interface
 
 ## 1. Dynamic Script Runner
 
