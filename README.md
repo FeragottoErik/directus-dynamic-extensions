@@ -1,5 +1,3 @@
-# Directus Custom Extensions
-
 # Custom Directus Interface Extensions
 
 This repository contains three custom Directus interface extensions that enable dynamic script execution, inter-component communication, and API-powered dropdowns.
