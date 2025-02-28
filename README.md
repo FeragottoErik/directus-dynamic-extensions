@@ -45,7 +45,7 @@ The **`directus-extension-dynamic-api-dropdown`** is a searchable dropdown that 
 - Apply a **custom transformation function** to modify how items appear in the dropdown and input field.
 - Users see only the transformed values, while the emitted and saved value remains the original API response.
 
-![Dynamic API Dropdown](./images/directus-extension-emitter-receiver-bus.png)
+![Dynamic API Dropdown](./images/directus-extension-dynamic-api-drowpdown.png)
 
 ---
 
