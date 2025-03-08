@@ -39,7 +39,7 @@ The **`directus-extension-dynamic-api-dropdown`** is a searchable dropdown that 
 ### Features:
 - Fetch dropdown options from an API response.
 - Define a custom request body in the interface configuration.
-- Override the request body with values from a field in the item.
+- Merge the request body with values from a field in the item.
 - Apply a **custom transformation function** to modify how items appear in the dropdown and input field.
 - Users see only the transformed values, while the emitted and saved value remains the original API response.
 
